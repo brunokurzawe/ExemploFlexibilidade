@@ -11,5 +11,10 @@ public class Main {
         PaymentService walletPaymentService = new PaymentService(walletProcessor);
         walletPaymentService.processPayment();
 
+        // Agora, usando Injeção de Dependência para suportar carteiras digitais sem modificar o código existente
+        PaymentProcessor moneyProcessor = new MoneyPaymentProcessor();
+        PaymentService moneyPaymentService = new PaymentService(moneyProcessor);
+        moneyPaymentService.processPayment();
+
     }
 }
